@@ -2,6 +2,12 @@
 
 {% block content %}  
 
+<meta name="description" content="Download 3000+ free fonts in Arabic style. Make your web calligraphically beautiful using unique Arabic fonts." />
+<meta name="keywords" content="arabfonts, arabicfonts, arabic fonts, arab fonts, download arabic fonts, arabic fonts download, " />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</header><!-- End Header -->
+
  
   <main id="main">
 
@@ -52,7 +58,7 @@
                 <a href="{% url 'fonts_details' fonts.slug %}">{{fonts.title}}</a>
               </h2>
 
-              <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt=""></a>
+              <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.headerimg_alt}} {{fonts.title}}"></a>
 
               <div class="entry-meta">
                 {% comment %} <ul>

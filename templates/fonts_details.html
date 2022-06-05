@@ -2,6 +2,10 @@
 
 {% block content %}
 
+<meta name="description" content="{{fonts_obj.title}} : Download for free at ArabicFonts" />
+<meta name="keywords" content="{{fonts_obj.metkeyword}}1000+ arabic fonts," />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</header><!-- End Header -->
 
   <main id="main">
 
@@ -10,7 +14,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Arabic Fonts Download</h2>
+          <h1>Arabic Fonts Download</h1>
           <ol>
             <li><a href="/">Home</a></li>
             <li><a href="allfonts">Allfonts</a></li>
@@ -65,7 +69,7 @@
                 </blockquote> {% endcomment %}
 
                 
-                <img src="/static/{{fonts_obj.header_image}}" class="img-fluid" alt="">
+                <img src="/static/{{fonts_obj.header_image}}" class="img-fluid" alt="{{fonts_obj.headerimg_alt}}{{fonts.title}}">
 
                 <div class="read-more">
                   <a href="/static/{{fonts_obj.upload_fonts}}">Download Now</a>
@@ -80,7 +84,7 @@
                   {{fonts_obj.long_dis|safe}}
                 </p>
 
-                <img src="/static/{{fonts_obj.char_maping}}" class="img-fluid" alt="">
+                <img src="/static/{{fonts_obj.char_maping}}" class="img-fluid" alt="{{fonts_obj.charimg_alt}}">
                 
 
               </div>
@@ -116,7 +120,7 @@
                       {% for fonts in allfonts %}
         
                       <h2>{{fonts.title}}</h2>
-                      <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt=""></a>   
+                      <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.headerimg_alt}}{{fonts.title}}"></a>   
                       
         
                       <div class="entry-meta">
