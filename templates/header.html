@@ -19,7 +19,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ websitedata.favicon.url }}" rel="icon">
+  <link href="/static/{{websitedata.favicon}}" rel="icon">
   {% comment %} <link href="/media/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> {% endcomment %}
 
   <!-- Google Fonts -->
@@ -56,7 +56,7 @@
 
         
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="/" class="logo me-auto"><img src="{% static '{{websitedata.logo.url}}' %}" alt="" class="img-fluid"></a>
+        <a href="/" class="logo me-auto"><img src="/static/{{websitedata.logo}}" alt="" class="img-fluid"></a>
   
         <nav id="navbar" class="navbar">
           <ul>

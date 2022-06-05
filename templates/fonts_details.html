@@ -32,9 +32,9 @@
 
             <article class="entry entry-single">
 
-              <div class="entry-img">
+              {% comment %} <div class="entry-img">
                 <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
+              </div> {% endcomment %}
 
               
 
@@ -44,32 +44,31 @@
 
               {% comment %} <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> {% endcomment %}
 
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
-                </ul>
-              </div>
-
+              
               <div class="entry-content">
                 <p>
                   {{fonts.title}}
+                  
+                  {{fonts_obj.short_dis|safe }}
                 </p>
-
-                <p>
-                  {{fonts_obj.short_discription}}
-                </p>
+                <div class="entry-meta">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                  </ul>
+                </div>
+                
 {% comment %} 
                 <blockquote>
                  
                 </blockquote> {% endcomment %}
 
                 
-                <img src="/media/{{fonts_obj.header_image}}" class="img-fluid" alt="">
+                <img src="/static/{{fonts_obj.header_image}}" class="img-fluid" alt="">
 
                 <div class="read-more">
-                  <a href="{{fonts_obj.upload_fonts.url}}">Download Now</a>
+                  <a href="/static/{{fonts_obj.upload_fonts}}">Download Now</a>
                 </div>
                 {% comment %} <form action="{{ download. upload_fonts.url }}" method="get">
                               <input type="hidden" name="upload_fonts.url" value="{{upload_fonts.url}}">
@@ -78,8 +77,10 @@
 
                 <h3>{{fonts_obj.title}}.</h3>
                 <p>
-                  {{fonts_obj.long_discription|safe}}
+                  {{fonts_obj.long_dis|safe}}
                 </p>
+
+                <img src="/static/{{fonts_obj.char_maping}}" class="img-fluid" alt="">
                 
 
               </div>
@@ -115,7 +116,7 @@
                       {% for fonts in allfonts %}
         
                       <h2>{{fonts.title}}</h2>
-                      <a href="{% url 'fonts_details' fonts.slug%}"><img src="/media/{{fonts.header_image}}" class="img-fluid" alt=""></a>   
+                      <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt=""></a>   
                       
         
                       <div class="entry-meta">
