@@ -9,7 +9,8 @@ urlpatterns = [
     path('termsandcondition' , termsandcondition , name="termsandcondition"),
     path('privacypolicy' , privacypolicy , name="privacypolicy"),
     path('pages' , pages , name="our_page"),
-    path('aboutus' , aboutus , name="aboutus")
+    path('aboutus' , aboutus , name="aboutus"),
+    path('fonts' , home , name="arabic fonts"),
  
     
 
