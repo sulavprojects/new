@@ -30,7 +30,7 @@ def home(request):
 def allfonts(request):
     websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
     allfonts = Fonts.objects.filter(publish = True)
-    p = Paginator(allfonts, 2)
+    p = Paginator(allfonts, 5)
     page = request.GET.get('page')
     fontsfinal = p.get_page(page)
     
@@ -46,7 +46,7 @@ def allfonts(request):
 
 def fonts_details(request, slug):
 
-    #snippet = get_object_or_404(snippet, slug=slug)
+    
 
      
     websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
