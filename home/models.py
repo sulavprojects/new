@@ -14,6 +14,7 @@ class Fonts(models.Model):
     long_dis = FroalaField()
     char_maping = models.ImageField(upload_to='char_maping')
     publish = models.BooleanField(default=False)
+    Total_downloads = models.PositiveIntegerField(default=10, blank=False, null= False)
 
     def __str__(self):
         return self.title
