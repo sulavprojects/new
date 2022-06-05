@@ -1,6 +1,6 @@
 from turtle import title
 from django.db import models
-from froala_editor.fields import FroalaField
+# from froala_editor.fields import FroalaField
 from .helpers import *
 
 # Create your models here.
@@ -11,7 +11,7 @@ class Fonts(models.Model):
     header_image = models.ImageField(upload_to='header_image')
     upload_fonts = models.FileField(upload_to="upload_fonts")
     short_dis = models.TextField()
-    long_dis = FroalaField()
+    long_dis = models.TextField()
     char_maping = models.ImageField(upload_to='char_maping')
     publish = models.BooleanField(default=False)
 
@@ -39,10 +39,10 @@ class Modification(models.Model):
 
 
 class Pages(models.Model):
-    aboutus = FroalaField()
-    privacypolicy = FroalaField()
-    termsandcondition = FroalaField()
-    ourpages = FroalaField()
+    aboutus = models.TextField()
+    privacypolicy = models.TextField()
+    termsandcondition = models.TextField()
+    ourpages = models.TextField()
 
 
 class Contact(models.Model):
