@@ -1,6 +1,7 @@
 from django.db import models
 
 from .helpers import *
+from froala_editor.fields import FroalaField
 
 # Create your models here.
 class Fonts(models.Model):
@@ -9,8 +10,8 @@ class Fonts(models.Model):
     metakeyword = models.CharField(max_length=200, null=True)
     header_image = models.ImageField(upload_to='header_image')
     upload_fonts = models.FileField(upload_to="upload_fonts")
-    short_dis = models.TextField()
-    long_dis = models.TextField()
+    short_dis = FroalaField()
+    long_dis = FroalaField()
     char_maping = models.ImageField(upload_to='char_maping')
     publish = models.BooleanField(default=False)
 
@@ -29,7 +30,7 @@ class Modification(models.Model):
     ouremail = models.EmailField()
     copyright = models.CharField(max_length=100)
     logo = models.ImageField(upload_to='websiteimages')
-    websitediscription = models.TextField()
+    websitediscription = FroalaField()
     favicon = models.ImageField()
 
     def __str__(self):
@@ -37,10 +38,10 @@ class Modification(models.Model):
 
 
 class Pages(models.Model):
-    aboutus = models.TextField()
-    privacypolicy = models.TextField()
-    termsandcondition = models.TextField()
-    ourpages = models.TextField()
+    aboutus = FroalaField()
+    privacypolicy = FroalaField()
+    termsandcondition = FroalaField()
+    ourpages = FroalaField()
 
 
 class Contact(models.Model):
