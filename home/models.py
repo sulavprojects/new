@@ -31,7 +31,7 @@ class Modification(models.Model):
     ouremail = models.EmailField()
     copyright = models.CharField(max_length=100)
     logo = models.ImageField(upload_to='websiteimages')
-    websitediscription = FroalaField()
+    websitediscription = models.TextField()
     favicon = models.ImageField()
 
     def __str__(self):
