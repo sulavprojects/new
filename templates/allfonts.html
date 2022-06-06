@@ -27,6 +27,10 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
+
+    
+
+
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
@@ -35,7 +39,59 @@
 
           <div class="col-lg-8 entries">
 
-            <article class="entry">              
+            <article class="entry"> 
+              
+              
+
+              <ul class="pagination justify-content-center"> <p>page: {{ fontsfinal.number }}/{{ fontsfinal.paginator.num_pages }}</p> </ul>
+
+            <div class="blog-pagination">
+              <ul class="justify-content-center">
+                {% if fontsfinal.has_previous %}
+
+                <li >
+                  <a href="?page=1" tabindex="-1">first</a>
+                </li>
+      
+      
+                <li>
+                  <a href="?page={{fontsfinal.previous_page_number}}" tabindex="-1">Previous</a>
+                </li>
+
+                {% endif %}
+
+                {% for num_page in fontsfinal.paginator.page_range %}
+
+                {% if fontsfinal.number == num_page %} 
+                
+                {% comment %} <li class="active"><a href="?page={{ num_page }}">{{ num_page }}>(current)</a></li> {% endcomment %}
+
+                <li class="active">
+                  <a href="?page={{ num_page }}">{{ num_page }} <span class="sr-only"></span></a>
+                </li>
+                {% else %}
+
+                <li>
+                  <a href="?page={{ num_page }}">{{ num_page }} <span class="sr-only"></span></a>
+                </li>
+
+                
+                {% endif %}
+
+                {% endfor %}
+
+                {% if fontsfinal.has_next %}
+                  <li class="page-item">
+                     <a class="page-link" href="?page={{fontsfinal.next_page_number}}">Next</a>
+                  </li>
+
+          
+                {% endif %}
+
+
+              </ul>
+            </div>
+            <br><br>
 
               {% for fonts in fontsfinal %}
 
@@ -61,6 +117,7 @@
                   <a href="{% url 'fonts_details' fonts.slug %}">Download Now</a>
                 </div>
               </div>
+              <br><br>
               {% endfor %}
 
             </article><!-- End blog entry -->
@@ -134,51 +191,7 @@
                 </form>
               </div><!-- End sidebar search formn-->
 
-              <h3 class="sidebar-title">Categories</h3>
-              {% comment %} <div class="sidebar-item categories">
-                <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
-              </div><!-- End sidebar categories--> {% endcomment %}
-
-              <h3 class="sidebar-title">Recent Posts</h3>
-              {% comment %} <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-1.jpg" alt="">
-                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-2.jpg" alt="">
-                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-3.jpg" alt="">
-                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-4.jpg" alt="">
-                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-5.jpg" alt="">
-                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-              </div><!-- End sidebar recent posts--> {% endcomment %}
+              
 
               <h3 class="sidebar-title">Tags</h3>
               {% comment %} <div class="sidebar-item tags">

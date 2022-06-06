@@ -3,7 +3,7 @@
 {% block content %}
 
 <meta name="description" content="{{fonts_obj.title}} : Download for free at ArabicFonts" />
-<meta name="keywords" content="{{fonts_obj.metkeyword}}1000+ arabic fonts," />
+<meta name="keywords" content="{{fonts_obj.title}}{{fonts_obj.metkeyword}}1000+ arabic fonts," />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </header><!-- End Header -->
 
@@ -57,9 +57,9 @@
                 </p>
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-download"></i> <a href="/">{{fonts_obj.Total_downloads}}</a></li>
+                    {% comment %} <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li> {% endcomment %}
                   </ul>
                 </div>
                 
@@ -83,6 +83,9 @@
                 <p>
                   {{fonts_obj.long_dis|safe}}
                 </p>
+                <br>
+
+                <h2>{{fonts_obj.title}} Character maping </h2><br><br>
 
                 <img src="/static/{{fonts_obj.char_maping}}" class="img-fluid" alt="{{fonts_obj.charimg_alt}}">
                 
@@ -90,20 +93,29 @@
               </div>
 
               <div class="entry-footer">
-                <i class="bi bi-folder"></i>
+                <i class="bi bi-award-fill"></i>
                 <ul class="cats">
-                  <li><a href="#">Business</a></li>
+                  <li><a href="#">copyright</a></li>
                 </ul>
 
-                <i class="bi bi-tags"></i>
+                <i class="bi bi-check-circle-fill"></i>
                 <ul class="tags">
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
+                  <li><a href="/">arab fonts </a></li>
+                  
                 </ul>
               </div>
               
             </article>
+
+
+            <h2>how to install fonts on computer</h2><br>
+
+                    <ol>
+                      <li>Download the font files. These often come compressed in .zip folders.</li>
+                      <li>unzip them by right-clicking the .zip folder and then clicking Extract. Now you'll see the available TrueType and OpenType font files:</li>
+                      <li>Right-click the fonts you want, and click Install.</li>
+                      <li>If you're prompted to allow the program to make changes to your computer, and if you trust the source of the font, click Yes.</li>
+                    </ol>
 
 
             <section id="blog" class="blog">
@@ -144,6 +156,9 @@
                       {% endfor %} 
         
                     </article>
+
+
+                    
 
             
       
