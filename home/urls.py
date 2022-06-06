@@ -11,6 +11,9 @@ urlpatterns = [
     path('pages' , pages , name="our_page"),
     path('aboutus' , aboutus , name="aboutus"),
     path('fonts' , home , name="arabic fonts"),
+    path('help' , help , name="help"),
+    path('install-fonts-on-linux', linux , name="install_fonts_on_linux"),
+    path('install-fonts-on-windows', windows , name="install_fonts_on_windows"),
  
     
 

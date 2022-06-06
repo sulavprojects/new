@@ -139,3 +139,31 @@ def aboutus(request):
     discription = Pages.objects.latest('aboutus')
     context = {'discription': discription, 'websitedata': websitedata,} 
     return render(request, 'aboutus.html', context)
+
+
+
+
+
+def help(request):     
+    websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
+    context = {        
+                'websitedata': websitedata
+    
+    }
+    return render(request , 'help.html',context)  
+
+def linux(request):     
+    websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
+    context = {        
+                'websitedata': websitedata
+    
+    }
+    return render(request , 'linux.html',context)  
+
+def windows(request):     
+    websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
+    context = {        
+                'websitedata': websitedata
+    
+    }
+    return render(request , 'windows.html',context) 
