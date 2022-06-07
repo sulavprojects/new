@@ -39,59 +39,7 @@
 
           <div class="col-lg-8 entries">
 
-            <article class="entry"> 
-              
-              
-
-              <ul class="pagination justify-content-center"> <p>page: {{ fontsfinal.number }}/{{ fontsfinal.paginator.num_pages }}</p> </ul>
-
-            <div class="blog-pagination">
-              <ul class="justify-content-center">
-                {% if fontsfinal.has_previous %}
-
-                <li >
-                  <a href="?page=1" tabindex="-1">first</a>
-                </li>
-      
-      
-                <li>
-                  <a href="?page={{fontsfinal.previous_page_number}}" tabindex="-1">Previous</a>
-                </li>
-
-                {% endif %}
-
-                {% for num_page in fontsfinal.paginator.page_range %}
-
-                {% if fontsfinal.number == num_page %} 
-                
-                {% comment %} <li class="active"><a href="?page={{ num_page }}">{{ num_page }}>(current)</a></li> {% endcomment %}
-
-                <li class="active">
-                  <a href="?page={{ num_page }}">{{ num_page }} <span class="sr-only"></span></a>
-                </li>
-                {% else %}
-
-                <li>
-                  <a href="?page={{ num_page }}">{{ num_page }} <span class="sr-only"></span></a>
-                </li>
-
-                
-                {% endif %}
-
-                {% endfor %}
-
-                {% if fontsfinal.has_next %}
-                  <li class="page-item">
-                     <a class="page-link" href="?page={{fontsfinal.next_page_number}}">Next</a>
-                  </li>
-
-          
-                {% endif %}
-
-
-              </ul>
-            </div>
-            <br><br>
+            <article class="entry">            
 
               {% for fonts in fontsfinal %}
 
