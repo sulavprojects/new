@@ -1,4 +1,4 @@
-from turtle import title
+
 from django.shortcuts import render,redirect
 from .models import *
 from django.core.paginator import Paginator
