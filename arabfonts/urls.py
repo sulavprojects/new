@@ -29,4 +29,7 @@ urlpatterns = [
     path('darkseidadmin3298/', admin.site.urls),
     path('' , include ('home.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    
+    
+
 ]

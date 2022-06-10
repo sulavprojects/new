@@ -1,5 +1,5 @@
 
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from .models import *
 from django.core.paginator import Paginator
 from django.contrib import messages
@@ -195,5 +195,14 @@ def search(request):
     
                 }
         return render(request , 'search.html',context)
+robots_file = '''User-Agent: *
+Disallow:
+Allow: /
 
+Sitemap: https://arabfonts.org/sitemap.xml
+'''
+
+def robots(request):
+    content = robots_file
+    return HttpResponse(content, content_type='text/plain')
      
