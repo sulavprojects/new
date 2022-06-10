@@ -14,6 +14,7 @@ urlpatterns = [
     path('help' , help , name="help"),
     path('install-fonts-on-linux', linux , name="install_fonts_on_linux"),
     path('install-fonts-on-windows', windows , name="install_fonts_on_windows"),
+    path('search' , search , name="search"),
  
     
 

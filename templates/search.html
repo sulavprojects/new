@@ -20,7 +20,7 @@
           <h1>Allfonts</h1>
           <ol>
             <li><a href="/">Home</a></li>
-            <li>Allfonts</li>
+            <li>Search</li>
           </ol>
         </div>
 
@@ -39,35 +39,43 @@
 
           <div class="col-lg-8 entries">
 
-            <article class="entry">            
+            <article class="entry">
+                {% if searched %}
+                    
+                    <br/>
+                    {% for searchfont in searchfonts %}
+                        {{ searchfont }}<br/>
 
-              {% for fonts in fontsfinal %}
+                        <h2 class="entry-title">
+                            <a href="{% url 'fonts_details' searchfont.slug%}">{{searchfont.title}}</a>
+                          </h2>
+            
+                          <a href="{% url 'fonts_details' searchfont.slug%}"><img src="/static/{{searchfont.header_image}}" class="img-fluid" alt="{{searchfont.headerimg_alt}}{{searchfont.title}}"></a>
+            
+                          <div class="entry-meta">
+                            {% comment %} <ul>
+                              <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'fonts_details' fonts.slug%}">John Doe</a></li>
+                              
+                              <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'fonts_details' fonts.slug%}">12 Comments</a></li>
+                            </ul> {% endcomment %}
+                          </div>              
+            
+                          <div class="entry-content">
+                            <p>
+                              {{searchfont.short_discription}}
+                            </p>
+                            <div class="read-more">
+                              <a href="{% url 'fonts_details' searchfont.slug %}">Download Now</a>
+                            </div>
+                    {% endfor %}
 
-              <h2 class="entry-title">
-                <a href="{% url 'fonts_details' fonts.slug%}">{{fonts.title}}</a>
-              </h2>
+                    {% else %}
+                    <h1> Hey! you forgot to search for Fonts {{searched}}</h1>
 
-              <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.title}}{{fonts.headerimg_alt}}"></a>
+                
+                  {% endif %}
 
-              <div class="entry-meta">
-                {% comment %} <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'fonts_details' fonts.slug%}">John Doe</a></li>
-                  
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'fonts_details' fonts.slug%}">12 Comments</a></li>
-                </ul> {% endcomment %}
-              </div>              
-
-              <div class="entry-content">
-                <p>
-                  {{fonts.short_discription}}
-                </p>
-                <div class="read-more">
-                  <a href="{% url 'fonts_details' fonts.slug %}">Download Now</a>
-                </div>
-              </div>
-              <br><br>
-              {% endfor %}
-
+             
             </article><!-- End blog entry -->
 
             <!-- End blog entry -->
