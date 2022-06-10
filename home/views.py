@@ -175,9 +175,7 @@ def search(request):
         searched = request.POST['searched'] 
         searchfonts = Fonts.objects.filter(title__contains=searched)
         
-        p = Paginator(searchfonts, 5)
-        page = request.GET.get('page')
-        fontsfinal = p.get_page(page)
+       
 
         websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
         context = { 
@@ -185,7 +183,7 @@ def search(request):
                 'websitedata': websitedata,
                 'searched': searched,
                 'searchfonts': searchfonts,
-                'fontsfinal': fontsfinal
+                
     
                 }
         return render(request , 'search.html',context)
