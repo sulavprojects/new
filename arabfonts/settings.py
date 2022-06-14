@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'froala_editor',
+    # 'rest_framework',
     'robots',
+    'taggit',
     'home',
 ]
 
@@ -148,3 +150,4 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+TAGGIT_CASE_INSENSITIVE = True

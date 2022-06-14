@@ -2,14 +2,17 @@ from email.policy import default
 from django.db import models
 from django.forms import CharField
 
+
 from .helpers import *
 from froala_editor.fields import FroalaField
+from taggit.managers import TaggableManager
 
 # Create your models here.
 class Fonts(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=200, null=True, blank=True)
     metakeyword = models.CharField(max_length=200, null=True)
+    tags = TaggableManager()
     header_image = models.ImageField(upload_to='header_image')
     headerimg_alt = models.CharField(max_length=100, default="arabic fonts")
     upload_fonts = models.FileField(upload_to="upload_fonts")

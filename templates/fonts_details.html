@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<meta name="description" content="{{fonts_obj.title}} : Download for free at ArabicFonts" />
+<meta name="description" content="{{fonts_obj.title}} : Download free arabic fonts from Arab Fonts" />
 <meta name="keywords" content="{{fonts_obj.title}},{{fonts_obj.metakeyword}},1000+ arabic fonts," />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </header><!-- End Header -->
@@ -14,7 +14,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h1>Arabic Fonts Download</h1>
+          <h1><strong>Arabic Fonts Download</strong></h1>
           <ol>
             <li><a href="/">Home</a></li>
             <li><a href="allfonts">Allfonts</a></li>
@@ -85,7 +85,7 @@
                 </p>
                 <br>
 
-                <h2>{{fonts_obj.title}} Character maping </h2><br><br>
+                <h2><strong>{{fonts_obj.title}} Character maping </strong></h2><br><br>
 
                 <img src="/static/{{fonts_obj.char_maping}}" class="img-fluid" alt="{{fonts_obj.title}}{{fonts_obj.charimg_alt}}">
                 
@@ -104,32 +104,17 @@
                   
                 </ul>
               </div>
-              
-            </article>
+              <h2>how to install fonts on computer</h2><br>
+
+              <ol>
+                <li>Download the font files. These often come compressed in .zip folders.</li>
+                <li>unzip them by right-clicking the .zip folder and then clicking Extract. Now you'll see the available TrueType and OpenType font files:</li>
+                <li>Right-click the fonts you want, and click Install.</li>
+                <li>If you're prompted to allow the program to make changes to your computer, and if you trust the source of the font, click Yes.</li>
+              </ol>
 
 
-            <h2>how to install fonts on computer</h2><br>
-
-                    <ol>
-                      <li>Download the font files. These often come compressed in .zip folders.</li>
-                      <li>unzip them by right-clicking the .zip folder and then clicking Extract. Now you'll see the available TrueType and OpenType font files:</li>
-                      <li>Right-click the fonts you want, and click Install.</li>
-                      <li>If you're prompted to allow the program to make changes to your computer, and if you trust the source of the font, click Yes.</li>
-                    </ol>
-
-
-            <section id="blog" class="blog">
-              <div class="container" data-aos="fade-up">
-        
-                <div class="">
-        
-                  <div class="">
-        
-                    <article class="entry">
-        
-                      
-        
-                      {% for fonts in allfonts %}
+              {% for fonts in allfonts %}
         
                       <h2>{{fonts.title}}</h2>
                       <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.headerimg_alt}}{{fonts.title}}"></a>   
@@ -154,19 +139,10 @@
                         </div>
                       </div>
                       {% endfor %} 
-        
-                    </article>
+              
+            </article>            
 
-
-                    
-
-            
-      
-          
-
-            {% comment %} <!-- End blog entry -->
-
-            <div class="blog-author d-flex align-items-center">
+            {% comment %} <div class="blog-author d-flex align-items-center">
               <img src="assets/img/blog/blog-author.jpg" class="rounded-circle float-left" alt="">
               <div>
                 <h4>Jane Smith</h4>
@@ -179,111 +155,16 @@
                   Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
                 </p>
               </div>
-            </div><!-- End blog author bio -->
+            </div><!-- End blog author bio -->         {% endcomment %}
 
-            <div class="blog-comments">
 
-              <h4 class="comments-count">8 Comments</h4>
-
-              <div id="comment-1" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
-                  <div>
-                    <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan, 2020</time>
-                    <p>
-                      Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
-                      Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End comment #1 -->
-
-              <div id="comment-2" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
-                  <div>
-                    <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan, 2020</time>
-                    <p>
-                      Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut beatae.
-                    </p>
-                  </div>
-                </div>
-
-                <div id="comment-reply-1" class="comment comment-reply">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
-                    <div>
-                      <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                      <time datetime="2020-01-01">01 Jan, 2020</time>
-                      <p>
-                        Enim ipsa eum fugiat fuga repellat. Commodi quo quo dicta. Est ullam aspernatur ut vitae quia mollitia id non. Qui ad quas nostrum rerum sed necessitatibus aut est. Eum officiis sed repellat maxime vero nisi natus. Amet nesciunt nesciunt qui illum omnis est et dolor recusandae.
-
-                        Recusandae sit ad aut impedit et. Ipsa labore dolor impedit et natus in porro aut. Magnam qui cum. Illo similique occaecati nihil modi eligendi. Pariatur distinctio labore omnis incidunt et illum. Expedita et dignissimos distinctio laborum minima fugiat.
-
-                        Libero corporis qui. Nam illo odio beatae enim ducimus. Harum reiciendis error dolorum non autem quisquam vero rerum neque.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div id="comment-reply-2" class="comment comment-reply">
-                    <div class="d-flex">
-                      <div class="comment-img"><img src="assets/img/blog/comments-4.jpg" alt=""></div>
-                      <div>
-                        <h5><a href="">Sianna Ramsay</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                        <time datetime="2020-01-01">01 Jan, 2020</time>
-                        <p>
-                          Et dignissimos impedit nulla et quo distinctio ex nemo. Omnis quia dolores cupiditate et. Ut unde qui eligendi sapiente omnis ullam. Placeat porro est commodi est officiis voluptas repellat quisquam possimus. Perferendis id consectetur necessitatibus.
-                        </p>
-                      </div>
-                    </div>
-
-                  </div><!-- End comment reply #2-->
-
-                </div><!-- End comment reply #1-->
-
-              </div><!-- End comment #2--> {% endcomment %}
-
-              
-
-              
-{% comment %} 
-              <div class="reply-form">
-                <h4>Leave a Reply</h4>
-                <p>Your email address will not be published. Required fields are marked * </p>
-                <form action="">
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input name="name" type="text" class="form-control" placeholder="Your Name*">
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <input name="email" type="text" class="form-control" placeholder="Your Email*">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col form-group">
-                      <input name="website" type="text" class="form-control" placeholder="Your Website">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col form-group">
-                      <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Post Comment</button> {% endcomment %}
-
-                {% comment %} </form> {% endcomment %}
-
-              </div>
-
-            </div><!-- End blog comments -->
+             
 
           </div><!-- End blog entries list -->
 
           <div class="col-lg-4">
 
-            {% comment %} <div class="sidebar">
+            <div class="sidebar">
 
               <h3 class="sidebar-title">Search</h3>
               <div class="sidebar-item search-form">
@@ -293,7 +174,7 @@
                 </form>
               </div><!-- End sidebar search formn-->
 
-              <h3 class="sidebar-title">Categories</h3>
+              {% comment %} <h3 class="sidebar-title">Categories</h3>
               <div class="sidebar-item categories">
                 <ul>
                   <li><a href="#">General <span>(25)</span></a></li>
@@ -303,9 +184,9 @@
                   <li><a href="#">Creative <span>(8)</span></a></li>
                   <li><a href="#">Educaion <span>(14)</span></a></li>
                 </ul>
-              </div><!-- End sidebar categories-->
+              </div><!-- End sidebar categories--> {% endcomment %}
 
-              <h3 class="sidebar-title">Recent Posts</h3>
+              {% comment %} <h3 class="sidebar-title">Recent Posts</h3>
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
                   <img src="assets/img/blog/blog-recent-1.jpg" alt="">
@@ -337,24 +218,19 @@
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
-              </div><!-- End sidebar recent posts--> {% endcomment %}
+              </div><!-- End sidebar recent posts-->  {% endcomment %}
 
               <h3 class="sidebar-title">Tags</h3>
-              {% comment %} <div class="sidebar-item tags">
+                <div class="sidebar-item tags">
                 <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
+                  <li><a href="/">{{fonts_obj.title}}</a></li>
+                  {% for tag in alltag %}
+                  <li><a href="#">{{tag}}</a></li>
+                  {% endfor %}
+                                  
+                  
                 </ul>
-              </div><!-- End sidebar tags--> {% endcomment %}
+              </div><!-- End sidebar tags--> 
 
             </div><!-- End sidebar -->
 

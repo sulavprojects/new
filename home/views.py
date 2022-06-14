@@ -3,8 +3,12 @@ from django.shortcuts import render,redirect,HttpResponse
 from .models import *
 from django.core.paginator import Paginator
 from django.contrib import messages
+from taggit.models import Tag
+
 
 # Create your views here.
+
+
 
 
 def home(request):
@@ -12,14 +16,18 @@ def home(request):
     websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
     
     allfonts = Fonts.objects.filter(publish = True)
-    p = Paginator(allfonts, 5)
+    alltag = Tag.objects.all()
+    p = Paginator(allfonts, 8)
     page = request.GET.get('page')
     fontsfinal = p.get_page(page)
+    topfonts = Fonts.objects.order_by('-Total_downloads')
     
 
     context = {'fontsfinal': fontsfinal,                
                 'copyright': copyright,
-                'websitedata': websitedata
+                'websitedata': websitedata,
+                'topfonts': topfonts[:2],
+                'alltag': alltag
     
     }
     return render(request , 'index.html',context)  
@@ -29,6 +37,7 @@ def home(request):
 
 
 def allfonts(request):
+    alltag = Tag.objects.all()
     websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
     allfonts = Fonts.objects.filter(publish = True)
     p = Paginator(allfonts, 5)
@@ -39,6 +48,7 @@ def allfonts(request):
     context = {'fontsfinal': fontsfinal,
                'title': 'all fonts',
                'websitedata': websitedata, 
+               'alltag': alltag,
                 
     }
 
@@ -53,12 +63,14 @@ def fonts_details(request, slug):
     websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
     allfonts = Fonts.objects.order_by('-Total_downloads')
     title = Fonts.objects.filter(slug = slug).first()
+    alltag = Tag.objects.filter(slug = slug).first()
     
     context = {
         'allfonts': allfonts[:2],
         'title': title,
         'websitedata': websitedata, 
         'copyright': copyright,
+        'alltag': alltag,
         
         
     }

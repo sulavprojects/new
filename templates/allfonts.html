@@ -17,7 +17,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h1>Allfonts</h1>
+          <h1><strong>Modern Arabic fonts</strong></h1>
           <ol>
             <li><a href="/">Home</a></li>
             <li>Allfonts</li>
@@ -143,21 +143,14 @@
               
 
               <h3 class="sidebar-title">Tags</h3>
-              {% comment %} <div class="sidebar-item tags">
+              
+              <div class="sidebar-item tags">
                 <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
+                  {% for tag in alltag %}
+                  <li><a href="/">{{tag}}</a></li>
+                  {% endfor %}
                 </ul>
-              </div><!-- End sidebar tags--> {% endcomment %}
+              </div><!-- End sidebar tags-->
 
             </div><!-- End sidebar -->
 

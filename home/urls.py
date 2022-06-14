@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import *
 
+
 urlpatterns = [
     path('' , home , name="home"),
     path('allfonts' , allfonts , name="allfonts"),
@@ -16,6 +17,7 @@ urlpatterns = [
     path('install-fonts-on-windows', windows , name="install_fonts_on_windows"),
     path('search' , search , name="search"),
     path('robots.txt', robots, name='robots'),
+    
  
     
 

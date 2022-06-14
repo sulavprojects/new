@@ -43,14 +43,47 @@
           <div class="col-lg-8 entries">
 
             <article class="entry">
-
-              {% comment %} <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div> {% endcomment %}
               <p>
                 {{ websitedata.websitediscription|safe }}
                 <br><br>                 
               </p> 
+
+              <h2><strong>Top downloaded fonts</strong></h2></br></br>
+
+              {% for fonts in topfonts %}
+        
+                      <h2>{{fonts.title}}</h2>
+                      <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.headerimg_alt}}{{fonts.title}}"></a>   
+                      
+        
+                      <div class="entry-meta">
+                        {% comment %} <ul>
+                          <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'fonts_details' fonts.slug%}">John Doe</a></li>
+                          
+                          <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'fonts_details' fonts.slug%}">12 Comments</a></li>
+                        </ul> {% endcomment %}
+                      </div>
+        
+                      
+        
+                      <div class="entry-content">
+                        <p>
+                          {{fonts.short_discription}}
+                        </p>
+                        <div class="read-more">
+                          <a href="{% url 'fonts_details' fonts.slug %}">Download Now</a>
+                        </div>
+                      </div>
+                {% endfor %} 
+              </br></br>
+
+              {% comment %} <div class="entry-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div> {% endcomment %}
+
+              <h2><strong> list of fonts </strong><h2>
+              </br></br>
+              
               
 
               {% for fonts in fontsfinal %}
@@ -62,12 +95,19 @@
               <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.title}},{{fonts.headerimg_alt}} "></a>
 
               <div class="entry-meta">
+
+                {% for tag in fonts.tags.all %}
+
+                  {{tag}}
+
+                {% endfor %}
                 {% comment %} <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'fonts_details' fonts.slug%}">John Doe</a></li>
                   
                   <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'fonts_details' fonts.slug%}">12 Comments</a></li>
                 </ul> {% endcomment %}
               </div>
+              
 
               
 
@@ -159,21 +199,13 @@
               </div><!-- End sidebar recent posts--> {% endcomment %}
 
               <h3 class="sidebar-title">Tags</h3>
-              {% comment %} <div class="sidebar-item tags">
+               <div class="sidebar-item tags">
                 <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
+                  {% for tag in alltag %}
+                  <li><a href="/">{{tag}}</a></li>
+                  {% endfor %}
                 </ul>
-              </div><!-- End sidebar tags--> {% endcomment %}
+              </div><!-- End sidebar tags-->
 
             </div><!-- End sidebar -->
 
