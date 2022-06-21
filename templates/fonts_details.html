@@ -71,9 +71,9 @@
                 
                 <img src="/static/{{fonts_obj.header_image}}" class="img-fluid" alt="{{fonts_obj.title}},{{fonts_obj.headerimg_alt}}">
 
-                <div class="read-more">
+                {% comment %} <div class="read-more">
                   <a href="/static/{{fonts_obj.upload_fonts}}">Download Now</a>
-                </div>
+                </div> {% endcomment %}
                 {% comment %} <form action="{{ download. upload_fonts.url }}" method="get">
                               <input type="hidden" name="upload_fonts.url" value="{{upload_fonts.url}}">
                               <button type="submit" class="btn btn-sm btn-primary"> download now</button>
@@ -225,7 +225,7 @@
                 <ul>
                   <li><a href="/">{{fonts_obj.title}}</a></li>
                   {% for tag in alltag %}
-                  <li><a href="#">{{tag}}</a></li>
+                  <li><a href="/">{{tag}}</a></li>
                   {% endfor %}
                                   
                   
