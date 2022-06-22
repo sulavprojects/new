@@ -52,7 +52,7 @@
 
               {% for fonts in topfonts %}
         
-                      <h2>{{fonts.title}}</h2>
+                      <h1 class="entry-title">{{fonts.title}}</h1>
                       <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.headerimg_alt}}{{fonts.title}}"></a>   
                       
         
@@ -88,9 +88,9 @@
 
               {% for fonts in fontsfinal %}
 
-              <h2 class="entry-title">
+              <h1 class="entry-title">
                 <a href="{% url 'fonts_details' fonts.slug %}">{{fonts.title}}</a>
-              </h2>
+              </h1>
 
               <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.title}},{{fonts.headerimg_alt}} "></a>
 
