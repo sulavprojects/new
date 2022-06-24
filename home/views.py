@@ -217,4 +217,28 @@ Sitemap: https://arabfonts.org/sitemap.xml
 def robots(request):
     content = robots_file
     return HttpResponse(content, content_type='text/plain')
+
+
+def mostdownloaded(request):
+      
+    websitedata = Modification.objects.latest('websitename', 'websitediscription', 'ouremail', 'copyright', 'logo', 'favicon' )
+    
+    allfonts = Fonts.objects.filter(publish = True)
+    alltag = Tag.objects.all()
+    p = Paginator(allfonts, 8)
+    page = request.GET.get('page')
+    fontsfinal = p.get_page(page)
+    topfonts = Fonts.objects.order_by('-Total_downloads')
+    description = Mostdownloaded.objects.latest('Top_discription', 'Bottom_discription')
+    
+
+    context = {'fontsfinal': fontsfinal,                
+                'copyright': copyright,
+                'websitedata': websitedata,
+                'topfonts': topfonts[:10],
+                'alltag': alltag,
+                'description': description,
+    
+    }
+    return render(request , 'mostdown.html',context)
      

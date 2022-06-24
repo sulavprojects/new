@@ -1,0 +1,196 @@
+{% extends 'base.html' %} 
+
+{% block content %}  
+
+<meta name="description" content="Download most downloaded free fonts in Arabic style. Make your web calligraphically beautiful using unique Arabic fonts." />
+<meta name="keywords" content="arabfonts, arabicfonts, arabic fonts, arab fonts, download arabic fonts, arabic fonts download, most downloaded arabic fonts, mordern arabic fonts, " />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</header><!-- End Header -->
+
+ 
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h1>Most Downloaded Modern Arabic Fonts</h1>
+          <ol>
+            <li><a href="/">Home</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">       
+
+        {% for msg in messages %}
+
+            <div class="alert alert-info" role="alert">
+              {{msg}}  Thank you!
+      
+            </div>
+                    
+        {% endfor %}      
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry">
+              <p>
+                {{ description.Top_discription|safe }}
+                <br><br>                 
+              </p> 
+
+             
+
+              {% for fonts in topfonts %}
+        
+                      <h2 class="entry-title">{{fonts.title}}</h2>
+                      <a href="{% url 'fonts_details' fonts.slug%}"><img src="/static/{{fonts.header_image}}" class="img-fluid" alt="{{fonts.headerimg_alt}}{{fonts.title}}"></a>   
+                      
+        
+                      <div class="entry-meta">
+                        {% comment %} <ul>
+                          <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'fonts_details' fonts.slug%}">John Doe</a></li>
+                          
+                          <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'fonts_details' fonts.slug%}">12 Comments</a></li>
+                        </ul> {% endcomment %}
+                      </div>
+        
+                        {% for tag in fonts.tags.all %}
+
+                            {{tag}}
+
+                        {% endfor %}
+        
+                      <div class="entry-content">
+                        <p>
+                          {{fonts.short_discription}}
+                        </p>
+                        <div class="read-more">
+                          <a href="{% url 'fonts_details' fonts.slug %}">Download Now</a>
+                        </div>
+                      </div>
+                {% endfor %} 
+              </br></br>
+
+              {% comment %} <div class="entry-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div> {% endcomment %}
+
+
+              <p>
+                {{ description.Bottom_discription|safe }}
+                <br><br>                 
+              </p>
+
+              
+              
+
+              
+
+            </article><!-- End blog entry -->
+
+            <!-- End blog entry -->
+
+            <!-- End blog entry -->
+
+            <!-- End blog entry -->
+            <div class=" cello text-center">
+              <a href="/allfonts" class="btn btn-danger btn-block"><i class="fa fa-th-list"></i>___________View All Fonts___________</a>
+            </div>
+
+            
+              
+            
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+
+            <div class="sidebar">
+
+              <h3 class="sidebar-title">Search</h3>
+              <div class="sidebar-item search-form">
+                <form method=POST action="{% url 'search' %}">
+                  {% csrf_token %}
+                  <input type="text" name="searched">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+
+              {% comment %} <h3 class="sidebar-title">Categories</h3> {% endcomment %}
+              {% comment %} <div class="sidebar-item categories">
+                <ul>
+                  <li><a href="#">General <span>(25)</span></a></li>
+                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
+                  <li><a href="#">Travel <span>(5)</span></a></li>
+                  <li><a href="#">Design <span>(22)</span></a></li>
+                  <li><a href="#">Creative <span>(8)</span></a></li>
+                  <li><a href="#">Educaion <span>(14)</span></a></li>
+                </ul>
+              </div><!-- End sidebar categories--> {% endcomment %}
+
+              {% comment %} <h3 class="sidebar-title">Recent Posts</h3> {% endcomment %}
+              {% comment %} <div class="sidebar-item recent-posts">
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-1.jpg" alt="">
+                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-2.jpg" alt="">
+                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-3.jpg" alt="">
+                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-4.jpg" alt="">
+                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-5.jpg" alt="">
+                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+              </div><!-- End sidebar recent posts--> {% endcomment %}
+
+              <h3 class="sidebar-title">Tags</h3>
+               <div class="sidebar-item tags">
+                <ul>
+                  {% for tag in alltag %}
+                  <li><a href="/">{{tag}}</a></li>
+                  {% endfor %}
+                </ul>
+              </div><!-- End sidebar tags-->
+
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+  
+  {% endblock %}
+ 

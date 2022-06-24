@@ -1,6 +1,6 @@
 from email.policy import default
 from django.db import models
-from django.forms import CharField
+from django.forms import CharField, FloatField
 
 
 from .helpers import *
@@ -60,6 +60,11 @@ class Contact(models.Model):
 
     def __str__(self):
         return 'message from -' + self.name + ' - ' + self.email 
+
+class Mostdownloaded(models.Model):
+    Top_discription = FroalaField(null=True)
+    Bottom_discription = FroalaField(null=True)
+
 
 
 
