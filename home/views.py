@@ -241,4 +241,8 @@ def mostdownloaded(request):
     
     }
     return render(request , 'mostdown.html',context)
+
+def ads(request):
+    content = "google.com, pub-6063622873497016, DIRECT, f08c47fec0942fa0"
+    return HttpResponse(content, content_type='text/plain')
      

@@ -18,7 +18,7 @@ urlpatterns = [
     path('search' , search , name="search"),
     path('robots.txt', robots, name='robots'),
     path('mostdownloaded' , mostdownloaded , name="mostdownloaded"),
-    
+    path('ads.txt', ads, name='ads'),
  
     
 
